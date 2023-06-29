@@ -1,27 +1,17 @@
-import { UserForm } from '../Form/Form';
-import { Contacts } from '../Contacts/Contacts';
-import { Filter } from '../Filter/Filter';
-import { PhonebookWrapper } from '../Form/Form.styled';
-import { useSelector } from 'react-redux';
-import { contactsSelector } from 'redux/selectors/contactsSelector';
-
-
+import { ContactsPage } from "pages/ContactsPage";
+import { LoginPage } from "pages/LoginPage";
+import { RegisterPage } from "pages/RegisterPage";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const contacts = useSelector(contactsSelector);
+ 
 
   return (
-    <PhonebookWrapper>
-      <h1>Phonebook</h1>
-      <UserForm />
-      <h2>Find contact by name</h2>
-      <Filter/>
-      {contacts.length === 0 ? (
-        <p>You don't have contacts </p>
-      ) : (
-        <Contacts />
-      )}
-    </PhonebookWrapper>
+    <Routes>
+      <Route path="/contacts" element={<ContactsPage/>}></Route>
+      <Route path="/register" element={<RegisterPage/>}></Route>
+      <Route path="/login" element={<LoginPage/>}></Route>
+    </Routes>
   );
 }
 
