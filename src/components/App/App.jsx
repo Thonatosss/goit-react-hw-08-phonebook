@@ -1,3 +1,5 @@
+import { AppBar } from "components/AppBar/AppBar";
+
 import { ContactsPage } from "pages/ContactsPage";
 import { LoginPage } from "pages/LoginPage";
 import { RegisterPage } from "pages/RegisterPage";
@@ -7,11 +9,14 @@ function App() {
  
 
   return (
+    <div>
+      <AppBar/>
     <Routes>
       <Route path="/contacts" element={<ContactsPage/>}></Route>
       <Route path="/register" element={<RegisterPage/>}></Route>
       <Route path="/login" element={<LoginPage/>}></Route>
     </Routes>
+    </div>
   );
 }
 

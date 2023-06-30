@@ -1,6 +1,8 @@
+import { Contacts } from "components/Contacts/Contacts";
 import { Filter } from "components/Filter/Filter";
 import { UserForm } from "components/Form/Form";
 import { PhonebookWrapper } from "components/Form/Form.styled";
+import { useSelector } from "react-redux";
 import { contactsSelector } from "redux/selectors/contactsSelector";
 
 export const ContactsPage = () => {
