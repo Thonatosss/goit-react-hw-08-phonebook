@@ -5,7 +5,7 @@ import { object, string } from 'yup';
 import { FormLabel, FilterButton, FormInput } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelector } from 'redux/selectors/contactsSelector';
-import {addContact} from 'redux/slices/contactSlice';
+import {addContact} from 'redux/operations/addContact';
 
 
 

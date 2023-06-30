@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { DeleteButton } from "./Contacts.styled";
 import { contactsSelector } from "redux/selectors/contactsSelector";
 import { filterSelector } from "redux/selectors/filterSelector";
-import { deleteContact } from "redux/slices/contactSlice";
+import { deleteContact } from "redux/operations/deleteContact";
 
 
 

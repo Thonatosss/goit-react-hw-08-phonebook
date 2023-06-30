@@ -1,6 +1,6 @@
 
 import { FilterInput } from "components/Form/Form.styled";
-import { setFilter } from 'redux/slices/filterSlice';
+import { setFilter } from "redux/slices/filterSlice";
 import { useDispatch, useSelector } from 'react-redux';
 import { filterSelector } from 'redux/selectors/filterSelector';
 
