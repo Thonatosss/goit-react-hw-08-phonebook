@@ -1,9 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { initialState } from "redux/initialState";
 import { addContact } from "redux/operations/addContact";
 import { deleteContact } from "redux/operations/deleteContact";
 import { fetchContacts } from "redux/operations/fetchContacts";
+const initialState = {
+    contacts: {
+        items: [],
+        isLoading: false,
+        error: null,
+        test: 3,
+    },
 
+    filter: ""
+}
 export const contactSlice = createSlice({
     name: 'contacts',
     initialState,
