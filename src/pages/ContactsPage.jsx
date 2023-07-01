@@ -15,7 +15,7 @@ export const ContactsPage = () => {
    }, [dispatch]);
   return (
     <PhonebookWrapper>
-      <h1>Phonebook</h1>
+      
       <UserForm />
       <h2>Find contact by name</h2>
       <Filter />

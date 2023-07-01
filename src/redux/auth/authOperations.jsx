@@ -45,18 +45,14 @@ export const getCurrentUser = createAsyncThunk(
     const state = thunkAPI.getState();
     console.log(state.auth.token);
     const persistedToken = state.auth.token;
-
-    
     if (persistedToken === null) {
-      return console.log('no token');
-      
+      return thunkAPI.rejectWithValue('No valid token');
     }
-    
     token.set(persistedToken);
     try {
       
       const response = await axios.get(`${BASE_URL}users/current`);
-      console.log('dasj');
+      console.log(response.data);
       return response.data;
       
     } catch (error) {

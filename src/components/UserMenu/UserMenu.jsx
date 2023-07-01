@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "redux/auth/authOperations";
-import { getUserEmail, getUserName } from "redux/auth/authSelectors";
+import { getUserName } from "redux/auth/authSelectors";
+import { LogoutBtn, UserMenuContainer } from "./UserMenu.styled";
 
 export const UserMenu = () => {
   const userName = useSelector(getUserName);
-  const userEmail = useSelector(getUserEmail)
+
   const dispatch = useDispatch();
   return (
-    <div>
-      <p>{userEmail}</p>
-      <p>{userName}</p>
-      <button onClick={() => dispatch(logOut())}>Logout</button>
-    </div>
+    <UserMenuContainer>
+      <p>Welcome, {userName}</p>
+      <LogoutBtn onClick={() => dispatch(logOut())}>Logout</LogoutBtn>
+    </UserMenuContainer>
   );
 };

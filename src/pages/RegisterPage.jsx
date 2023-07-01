@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authOperations';
+import { RegisterButton, RegisterForm, RegisterInput, RegisterLabel, RegisterTitle } from './RegisterPage.styled';
 
 export const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -32,22 +33,22 @@ export const RegisterPage = () => {
   };
   return (
     <div>
-      <h1>Register page</h1>
-      <form onSubmit={handleFomnSubmit}>
-        <label>
+      <RegisterForm onSubmit={handleFomnSubmit}>
+      <RegisterTitle>REGISTRATION</RegisterTitle>
+        <RegisterLabel>
           Name
-          <input type="text" name='name' value={name} onChange={handleChange} />
-        </label>
-        <label>
+        </RegisterLabel>
+          <RegisterInput type="text" name='name' value={name} onChange={handleChange} />
+        <RegisterLabel>
           Email
-          <input type="email" name='email' value={email} onChange={handleChange}/>
-        </label>
-        <label>
+        </RegisterLabel>
+          <RegisterInput type="email" name='email' value={email} onChange={handleChange}/>
+        <RegisterLabel>
           Password
-          <input type="password"  name='password' value={password} onChange={handleChange}/>
-        </label>
-        <button type="submit" >Register</button>
-      </form>
+        </RegisterLabel>
+          <RegisterInput type="password"  name='password' value={password} onChange={handleChange}/>
+        <RegisterButton type="submit" >Register</RegisterButton>
+      </RegisterForm>
     </div>
   );
 };

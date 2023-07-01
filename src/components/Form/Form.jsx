@@ -1,8 +1,8 @@
 import { nanoid } from 'nanoid';
 import React from 'react';
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import { object, string } from 'yup';
-import { FormLabel, FilterButton, FormInput } from './Form.styled';
+import { FormLabel, FilterButton, FormInput, ContactsForm, ContactsTitle, ErrMessage } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelector } from 'redux/selectors/contactsSelector';
 import {addContact} from 'redux/operations/addContact';
@@ -44,27 +44,30 @@ function UserForm() {
     resetForm();
   };
   return (
-    <Formik
-      onSubmit={handleFormSubmit}
-      validationSchema={schema}
-      initialValues={initialValues}
-      validateOnChange={true}
-    >
-      <Form>
-        <FormLabel>
-          Name
-          <FormInput type="text" name="name" required />
-          <ErrorMessage name="name" component="div"></ErrorMessage>
-        </FormLabel>
+    <ContactsForm>
+      <Formik
+        onSubmit={handleFormSubmit}
+        validationSchema={schema}
+        initialValues={initialValues}
+        validateOnChange={true}
+      >
+        <Form>
+          <ContactsTitle>PHONEBOOK</ContactsTitle>
+          <FormLabel>
+            Name
+            <FormInput type="text" name="name" required />
+            <ErrMessage name="name" component="div"></ErrMessage>
+          </FormLabel>
 
-        <FormLabel>
-          Number
-          <FormInput type="tel" name="number" required />
-          <ErrorMessage name="number" component="div"></ErrorMessage>
-          <FilterButton type="submit">Add contact</FilterButton>
-        </FormLabel>
-      </Form>
-    </Formik>
+          <FormLabel>
+            Number
+            <FormInput type="tel" name="number" required />
+            <ErrMessage name="number" component="div"></ErrMessage>
+            <FilterButton type="submit">Add contact</FilterButton>
+          </FormLabel>
+        </Form>
+      </Formik>
+    </ContactsForm>
   );
 }
 
